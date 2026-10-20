@@ -1,0 +1,11 @@
+/** Calcula el precio luego de aplicar un porcentaje de descuento. */
+export function calcularPrecioFinal(precio: number, descuento: number): number {
+  
+  if(!Number.isFinite(precio) || precio < 0){
+    throw new RangeError("El precio colocado es invalido,solo se aceptan numeros finitos,no negativos")
+  }
+  if(!Number.isFinite(descuento) || descuento < 0 || descuento > 100 ){
+    throw new RangeError("El descuento es invalido debe ser entre un rango del 0 al 100")
+  }
+  return precio - (precio * descuento) / 100;
+}
